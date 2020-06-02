@@ -19,7 +19,8 @@
     <button onclick="removeCol()">-</button>
     <div></div>
     <label>Choose a color:</label>
-    <select name="color">
+    <select name="color" onchange="color=value">
+        <option value="">-------</option>
         <option value="red">Red</option>
         <option value="orange">Orange</option>
         <option value="yellow">Yellow</option>
@@ -30,10 +31,10 @@
     <table id="grid" style="width:100%">
         <tbody>
             <tr class="row">
-                <td class="cell">
+                <td class="1" onclick="style.backgroundColor = color">
 
                 </td>
-                <td class="cell">
+                <td class="2" onclick="style.backgroundColor = color">
                         
                 </td>
             </tr>
