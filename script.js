@@ -6,3 +6,8 @@ function addRow(){
     var cell = document.createElement("td");
     row.appendChild(cell);
 }
+function removeRow(){
+    var grid = document.getElementById("grid");
+    var row = grid.lastElementChild;
+    if(grid.childElementCount>1)grid.removeChild(row); //remove the last added row when button is pressed
+}
