@@ -1,5 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <style> table,td, tr {
+        border: 1px solid black;
+        height: 15px;
+        width: 15px;
+    }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <button onclick="addRow()">+</button>
+    Row
+    <button onclick="removeRow()">-</button>
+    <div></div>
+    <button onclick="addCol()">+</button>
+    Column
+    <button onclick="removeCol()">-</button>
+    <div></div>
+    <label>Choose a color:</label>
+    <select name="color" onchange="color=value">
+        <option value="">-------</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+    </select>
+    <table id="grid" style="width:100%">
+        <tbody>
+            <tr class="row">
+                <td class="1" onclick="style.backgroundColor = color">
 
-
+                </td>
+                <td class="2" onclick="style.backgroundColor = color">
+                        
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
 </html>
