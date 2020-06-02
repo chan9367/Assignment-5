@@ -28,13 +28,19 @@
         <option value="blue">Blue</option>
         <option value="purple">Purple</option>
     </select>
+    <div></div>
+    <button onclick="colorEverythingUncolored()">Color Everything Uncolored</button>
+    <div></div>
+    <button onclick="colorEverything()">Color Everything</button>
+    <div></div>
+    <button onclick="eraseAllColors()">Erase All Colors</button>
     <table id="grid" style="width:100%">
         <tbody>
             <tr class="row">
-                <td class="1" onclick="style.backgroundColor = color">
+                <td class="cell 1 cf" onclick="style.backgroundColor = color">
 
                 </td>
-                <td class="2" onclick="style.backgroundColor = color">
+                <td class="cell 2 cf" onclick="style.backgroundColor = color">
                         
                 </td>
             </tr>
