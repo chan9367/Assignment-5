@@ -48,9 +48,9 @@ function removeCol(){//remove the last added column when button is pressed
 var color = ""; 
 function clickColor(td){ 
     function changeColor(){
-        td.style.backgroundColor = color;
+        td.bgColor = color;
         td.classList.remove("cf");
-        td.classList.add("ct"); //ct means color true, meaning the cell has a color
+        return td.classList.add("ct"); //ct means color true, meaning the cell has a color
     }
     td.addEventListener("click", changeColor);
 }
