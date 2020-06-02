@@ -1,4 +1,4 @@
-var colCount = 2; //keep count of our columns, starts with 2.
+var colCount = 0; //keep count of our columns, starts with 2.
 function addRow(){
     var grid = document.getElementById("grid");
     var row = document.createElement("tr");
@@ -45,14 +45,32 @@ function removeCol(){//remove the last added column when button is pressed
         }
     }               
 }
-var color = ""; 
+var color = "";   
+var holding = false; //keep tracks of when mouse is holding down.
 function clickColor(td){ 
     function changeColor(){
         td.bgColor = color;
         td.classList.remove("cf");
-        return td.classList.add("ct"); //ct means color true, meaning the cell has a color
+        td.classList.add("ct"); //ct means color true, meaning the cell has a color
     }
+
     td.addEventListener("click", changeColor);
+    td.addEventListener("mousedown", function(){
+        holding=true;
+        changeColor();
+        }
+    )
+  
+    td.addEventListener("mousemove", function(){ 
+              if(holding==true)changeColor();
+       }
+    )
+    
+    td.addEventListener("mouseup", function(){
+        holding=false;
+        changeColor();
+        }
+    )
 }
 function colorEverythingUncolored(){
     var grid = document.getElementById("grid");
