@@ -7,7 +7,7 @@ function addRow(){
     for(var i=0;i<colCount;i++){ //adds an entire row of cells based on how many column currently in grid
         var cell = document.createElement("td");
         cell.classList.add("cell");
-        cell.classList.add("cf");
+        cell.classList.add("cf"); //"cf stands for color false, meaning it doesnt have a color"
         row.appendChild(cell);
         clickColor(cell); //lets the cell be able to be colored when clicked
     }
@@ -50,10 +50,11 @@ function clickColor(td){
     function changeColor(){
         td.style.backgroundColor = color;
         td.classList.remove("cf");
+        tc.classList.add("ct"); //ct means color true, meaning the cell has a color
     }
     td.addEventListener("click", changeColor);
 }
-function colorEverything(){
+function colorEverythingUncolored(){
     var grid = document.getElementById("grid");
     var row = document.getElementsByClassName("row");
     var col = Array.from(row);  //copies the row object and making a row of columns/cells
@@ -63,6 +64,22 @@ function colorEverything(){
         if(cell[i].classList.contains("cf")) {
             cell[i].bgColor=color;
             cell[i].classList.remove("cf");
+            cell[i].classList.add("ct")
+        }
+        }
+    }
+}
+function colorEverything(){
+    var grid = document.getElementById("grid");
+    var row = document.getElementsByClassName("row");
+    var col = Array.from(row);  //copies the row object and making a row of columns/cells
+    for(var i=0;i<1234567890;i++){ //keep adding cells to the row of columns/cells
+        var cell = document.getElementsByClassName("cell"); 
+        for(c in col[0]){
+        if(cell[i].classList.contains("cell")||cell[i].classList.contains("ct")||cell[i].classList.contains("cf")) {
+            cell[i].bgColor=color;
+            cell[i].classList.remove("cf");
+            cell[i].classList.add("ct")
         }
         }
     }
