@@ -10,14 +10,24 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <button onclick="addRow()">Add Row</button>
-    <button onclick="removeRow()">Remove Row</button>
+    <button onclick="addRow()">+</button>
+    Row
+    <button onclick="removeRow()">-</button>
+    <div></div>
+    <button onclick="addCol()">+</button>
+    Column
+    
     <table id="grid" style="width:100%">
-        <tr>
-            <td>
+        <tbody>
+            <tr class="row">
+                <td class="cell">
 
-            </td>
-        </tr>
+                </td>
+                <td class="cell">
+                        
+                </td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
