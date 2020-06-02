@@ -59,6 +59,11 @@ function colorEverything(){
     var col = Array.from(row);  //copies the row object and making a row of columns/cells
     for(var i=0;i<col.length;i++){ //keep adding cells to the row of columns/cells
         var cell = document.getElementsByClassName("cf"); 
-        if(cell[i].classList.contains("cf")) cell[i].bgColor=color;
+        for(c in col[0]){
+        if(cell[i].classList.contains("cf")) {
+            cell[i].bgColor=color;
+            cell[i].classList.remove("cf");
+        }
+        }
     }
 }
