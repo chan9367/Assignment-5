@@ -50,7 +50,7 @@ function clickColor(td){
     function changeColor(){
         td.style.backgroundColor = color;
         td.classList.remove("cf");
-        tc.classList.add("ct"); //ct means color true, meaning the cell has a color
+        td.classList.add("ct"); //ct means color true, meaning the cell has a color
     }
     td.addEventListener("click", changeColor);
 }
@@ -80,6 +80,22 @@ function colorEverything(){
             cell[i].bgColor=color;
             cell[i].classList.remove("cf");
             cell[i].classList.add("ct")
+        }
+        }
+    }
+}
+
+function eraseAllColors(){
+    var grid = document.getElementById("grid");
+    var row = document.getElementsByClassName("row");
+    var col = Array.from(row);  //copies the row object and making a row of columns/cells
+    for(var i=0;i<1234567890;i++){ //keep adding cells to the row of columns/cells
+        var cell = document.getElementsByClassName("cell"); 
+        for(c in col[0]){
+        if(cell[i].classList.contains("cell")||cell[i].classList.contains("ct")||cell[i].classList.contains("cf")) {
+            cell[i].bgColor="";
+            cell[i].classList.remove("ct");
+            cell[i].classList.add("cf")
         }
         }
     }
