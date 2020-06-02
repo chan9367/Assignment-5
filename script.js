@@ -7,7 +7,7 @@ function addRow(){
     for(var i=0;i<colCount;i++){ //adds an entire row of cells based on how many column currently in grid
         var cell = document.createElement("td");
         row.appendChild(cell);
-        clickColor(cell);
+        clickColor(cell); //lets the cell be able to be colored when clicked
     }
     
 }
@@ -42,7 +42,7 @@ function removeCol(){//remove the last added column when button is pressed
     }               
 }
 var color = ""; 
-function clickColor(td){
+function clickColor(td){ 
     function changeColor(){
         td.style.backgroundColor = color;
     }
